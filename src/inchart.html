@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据趋势变化可视化</title>
+    <link rel="stylesheet" href="../src/charts/incharts.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>设备数据趋势变化展示</h1>
+        <!-- <div class="search search_id">
+            <label for="deviceId">设备ID</label>:
+            <input type="text" id="inputText">
+        </div> -->
+        <div class="search search_time">
+            <label for="timeInput">选择查询时长：</label>
+            <input type="number" id="inputNumber" oninput="checkInput()">
+            <select id="unitSelect">
+                <option value="minutes">分钟</option>
+                <option value="hours">小时</option>
+                <option value="days">天</option>
+                <option value="weeks">周</option>
+            </select>
+            <button type="button" id="searchButton" onclick="convertAndSend()">查询</button>
+        </div>
+        <script>
+            var interval;
+            function checkInput() {
+                var inputElement = document.getElementById('inputNumber');
+                var inputValue = parseInt(inputElement.value);
+
+                if (inputValue < 0) {
+                    inputElement.value = 0;
+                }
+            }
+
+            function convertAndSend() {
+                // 获取用户输入的设备id、数值和所选单位 
+                var inputNumber = document.getElementById("inputNumber").value;
+                var unitSelect = document.getElementById("unitSelect");
+                var selectedUnit = unitSelect.options[unitSelect.selectedIndex].value;
+
+                var interval
+                switch (selectedUnit) {
+                    case "minutes":
+                        interval = inputNumber + "m";
+                        break;
+                    case "hours":
+                        interval = inputNumber + "h";
+                        break;
+                    case "days":
+                        interval = inputNumber + "d";
+                        break;
+                    case "weeks":
+                        interval = inputNumber + "w";
+                        break;
+                    default:
+                        interval = '2m';
+                }
+
+                console.log(interval);;
+
+                var id = '01HXR5SHXZDDSDYX8VJ1APE22J';
+
+                fetchAndRenderChart(id, interval);
+            }
+        </script>
+    </header>
+
+    <section class="mainbox">
+        <div class="column">
+            <div class="box1">
+                <div class="panel top">
+                    <!-- 数值类数据变化趋势 -->
+                    <div class="chart" id="chart1"></div>
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+            <button class="inline-button1 inlinebutton" id="showProgressDataDetailBtn">查看性能数据详细变化趋势</button>
+            <div class="box2">
+                <div class="panel bottom">
+                    <!-- 状态类数据变化趋势 -->
+                    <div class="chart" id="chart2"></div>
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+            <button class="inline-button2 inlinebutton" id="showStatusDataDetailBtn">查看状态数据详细变化趋势</button>
+        </div>
+    </section>
+
+    <script src="chart/index1_chart1.js"></script>创新实践
+    <script src="chart/index1_chart2.js"></script>
+</body>
+
+</html>

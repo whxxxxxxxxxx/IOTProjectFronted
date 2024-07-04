@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化</title>
+    <link rel="stylesheet" href="./charts.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>设备数据可视化展示</h1>
+        <div id="showTime"></div>
+        <script>
+            function updateTime() {
+                let currentTime = new Date();
+
+                var year = currentTime.getFullYear();
+                var month = currentTime.getMonth() + 1;
+                var day = currentTime.getDate();
+                let hours = currentTime.getHours();
+                let minutes = currentTime.getMinutes();
+                let seconds = currentTime.getSeconds();
+                hours = (hours < 10 ? "0" : "") + hours;
+                minutes = (minutes < 10 ? "0" : "") + minutes;
+                seconds = (seconds < 10 ? "0" : "") + seconds;
+
+                var timeString = `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`;
+                document.getElementById("showTime").innerHTML = timeString;
+
+            }
+            updateTime();
+            setInterval(updateTime, 1000);
+        </script>
+    </header>
+    <!-- 可视化主体部分布局 -->
+    <selection class="mainbox">
+        <div class="column">
+            <div class="panel top">
+                <!-- <h2>饼状图-设备运行状态</h2> -->
+                <div class="chart" id="chart1"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel bottom">
+                <!-- <h2>折线图-设备分布统计</h2> -->
+                <div class="chart" id="chart2"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="column second">
+            <div class="panel top">
+                <!-- <h2>散点图-设备转速</h2> -->
+                <div class="chart" id="chart3"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel bottom">
+                <!-- <h2>折线图-设备转速统计</h2> -->
+                <div class="chart" id="chart4"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </selection>
+
+    
+    <script src="./chart1.js"></script>
+    <script src="./chart2.js"></script>
+    <script src="./chart3.js"></script>
+    <script src="./chart4.js"></script>
+</body>
+
+</html>

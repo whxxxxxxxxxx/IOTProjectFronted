@@ -1,0 +1,10 @@
+.Layout{
+    .logo{
+        height: 32px;
+        margin: 16px;
+        background: rgb(167, 166, 166);
+        color:aliceblue;
+        font-size: 20px;
+        text-align: center;
+    }
+}

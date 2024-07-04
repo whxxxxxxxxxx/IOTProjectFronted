@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*头部标签*/
+header {
+    position: relative;
+    height: 58px;
+    margin-top: 20px;
+    /* background-color: pink; */
+}
+
+header h1 {
+    font-size: 20px;
+    color: rgb(90, 90, 90);
+    text-align: center;
+    padding-top: 10px;
+    line-height: 1rem;
+}
+
+.search {
+    margin-left: 880px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    font-size: 14px;
+    color: rgb(90, 90, 90);
+    font-weight: 500;
+}
+
+select,
+input {
+    padding: 2px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+input {
+    height: 24px;
+    width: 120px;
+    border: none;
+    border-bottom: 2px solid #8B8989;
+}
+
+input:focus {
+    outline: 0;
+    border-bottom: 3px solid #8B8989;
+}
+
+#inputText {
+    width: 170px;
+}
+
+select {
+    height: 24px;
+    width: 60px;
+    border: 0;
+    font-size: 14px;
+    color: #4F4F4F;
+    font-weight: 600;
+    outline: 0;
+}
+
+option:hover {
+    background-color: #BCD2EE;
+    /* 设置悬停时的背景颜色 */
+}
+
+.mainbox {
+    display: flex;
+    min-width: 1024px;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0.125rem 0.125rem 0;
+    /* background-color: black; */
+}
+
+.panel {
+    position: relative;
+    height: 360px;
+    width: 1040px;
+    margin-left: 180px;
+    margin-top: 0px;
+    border: 1px solid #7777772b;
+    background: rgba(255, 255, 255, 0.03);
+
+    /* 制作左上角   */
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-left: 2px solid #3f3f3f;
+        border-top: 2px solid #3f3f3f;
+        content: "";
+    }
+
+    /* 制作右上角   */
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid #3f3f3f;
+        border-top: 2px solid #3f3f3f;
+        content: "";
+    }
+
+}
+
+.panel-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 10px;
+        height: 10px;
+        border-left: 2px solid #3f3f3f;
+        border-bottom: 2px solid #3f3f3f;
+        content: "";
+    }
+
+    &::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid #3f3f3f;
+        border-bottom: 2px solid #3f3f3f;
+        content: "";
+    }
+}
+
+.chart {
+    height: 296px;
+    width: 95%;
+    /* background-color: pink; */
+    margin-left: 10px;
+}
+
+.top,
+.bottom {
+    margin-top: 20px;
+
+}
+
+.inline-button1 {
+    float: right;
+    width: 90px;
+    margin-right: 95px;
+    margin-top: 160px;
+}
+
+.inline-button2 {
+    float: right;
+    width: 90px;
+    margin-right: 95px;
+    margin-top: 200px;
+}
+
+.box1,
+.box2 {
+    float: left;
+}
+
+.box1 {
+    margin-top: 18px;
+}
+
+.box2 {
+    margin-top: 20px;
+}
+
+#searchButton {
+    border: none;
+    padding: 4px 14px 6px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #B5B5B5;
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.24), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.inlinebutton {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 18px;
+    font-size: 13px;
+    font-weight: 600;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.inlinebutton:hover {
+    background-color: #B5B5B5;
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.24), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
